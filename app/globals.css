@@ -2,20 +2,177 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer components {
+  .sec_p80 {
+    @apply pt-10 sm:pt-16 md:pt-20;
+  }
+
+  .container3x {
+    @apply w-full max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-28;
+  }
+
+  .container2x {
+    @apply w-full max-w-[1920px] mx-auto px-4 sm:px-8 xl:px-16 2xl:px-28;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .cmn_btn {
+    @apply transition-transform duration-300 ease-in-out;
+    &:active {
+      @apply scale-95;
+    }
+  }
+
+  /* text  */
+
+  .title {
+    @apply text-xl sm:text-4xl md:text-7xl font-semibold;
+  }
+
+  .title2xl {
+    @apply text-2xl sm:text-4xl md:text-7xl font-semibold;
+  }
+
+  .tag {
+    @apply text-xs sm:text-sm px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg bg-neutral-800;
+  }
+
+  /* form  */
+
+  .formInput {
+    @apply px-6 py-4 bg-neutral-900 rounded-2xl w-full border-none outline-none text-white placeholder:text-text-300;
+  }
+
+  /* border radius  */
+
+  .rounded40 {
+    @apply rounded-3xl sm:rounded-[32px] md:rounded-[40px];
+  }
+  .rounded16_40 {
+    @apply rounded-2xl sm:rounded-3xl md:rounded-[32px] xl:rounded-[40px];
+  }
+
+  /* banner  */
+
+  .bannerContentWrapper {
+    @apply p-8 sm:p-10 md:p-14 xl:p-20 bg-black-900 xs:col-span-7 lg:col-span-8 font-chillax text-center sm:text-left flex flex-col items-center sm:items-start justify-center sm:justify-between gap-6 sm:gap-10 md:gap-16 rounded-xl sm:rounded-3xl xl:rounded-[2.5rem] relative overflow-hidden;
+  }
+
+  .bannerSubHeader {
+    @apply text-2xl sm:text-4xl xl:text-[4.25rem] !leading-[100%] xl:mb-2 font-nunita flex items-center justify-center sm:justify-start gap-x-0.5 font-extrabold;
+  }
+
+  .bannerHeader {
+    @apply text-[2.5rem] sm:text-4xl md:text-6xl xl:text-[6rem] leading-[100%] xl:leading-[80%] font-bold;
+  }
+
+  .bannerDescription {
+    @apply text-2xl lg:text-3xl xl:text-[3.75rem] xl:leading-[68px] font-bold xl:mt-4;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.5rem;
+    --color-white: #ffffff;
+    --bg-color: #010101;
+    --light-dark: #0a0a0a;
+    --main-color: #a0e635;
+    --text-color: 0, 0%, 100%;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--color-white);
+}
+
+.coin-container {
+  perspective: 1500px; /* Enhance 3D effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coin {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.coin:hover {
+  transform: rotateY(360deg); /* Full rotation */
+}
+
+.coin::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #141414, #272727);
+  border-radius: 50%;
+  transform: translateZ(-10px);
+}
+
+.coin-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #333, #222); /* Adds depth to the coin */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(10px); /* Slight pop-out for front */
+}
+
+.gradient-bg {
+  background: linear-gradient(119deg, #a0e635 20.09%, #68a30d 79.34%);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
+
+.transparentText {
+  background-image: linear-gradient(
+    to right,
+    hsla(var(--text-color), 1) 50%,
+    hsla(var(--text-color), 0.3) 50%
+  );
+  background-size: 200% 100%;
+  background-position-x: 0;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--light-dark);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 12px;
 }
