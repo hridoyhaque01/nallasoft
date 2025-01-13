@@ -9,7 +9,7 @@ function BlogCard({
   item,
 }: {
   wrapperClass?: string;
-  item?: BlogsType;
+  item: BlogsType;
 }) {
   return (
     <div
@@ -22,16 +22,24 @@ function BlogCard({
         {item?.title}
       </h2>
       <div className="flex items-center gap-4 mt-3 sm:mt-4">
-        <div className="w-10 h-10 relative bg-neutral-300 rounded-full overflow-hidden"></div>
+        <div className="w-8 sm:w-10 md:w-14 aspect-square bg-neutral-300 rounded-full">
+          <Image
+            src={item?.user?.image}
+            alt="user image"
+            className="rounded-full"
+            width={100}
+            height={100}
+          />
+        </div>
         <div>
           <p className="text-xs sm:text-sm">Written by</p>
-          <p className="text-xs sm:text-sm font-medium">Hridoy Haque</p>
+          <p className="text-xs sm:text-sm font-medium">{item?.user?.name}</p>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 sm:mt-6">
         <div className="w-full sm:min-w-[280px] sm:max-w-[360px] h-[166px] sm:h-[200px] bg-neutral-300 rounded-2xl sm:rounded-3xl overflow-hidden">
           <Image
-            src="https://culturizm.com/wp-content/uploads/2024/01/contemporary_art_styles.png.webp"
+            src={item?.image}
             alt="blog image"
             className="w-full h-full object-cover"
             width={600}
@@ -39,13 +47,7 @@ function BlogCard({
           />
         </div>
         <div className="flex flex-col justify-between gap-3">
-          <p className="line-clamp-5">
-            Relay was a virtual co-creation event to explorethe future of design
-            sprints and collaboration. We invited 100 experts from Google and
-            from the Industry to work tcgetherto explore 11 dimensions of
-            facilitation and collaboration. creating tools. resources and
-            inspirational content.
-          </p>
+          <p className="line-clamp-5">{item?.description}</p>
           <Link
             className="flex items-center gap-2 text-sm sm:text-base font-bold text-lime-400 group"
             href={routes.blogs}

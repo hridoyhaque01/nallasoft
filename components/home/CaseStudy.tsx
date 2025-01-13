@@ -1,31 +1,43 @@
+import { caseStudyData } from "@/services";
+import Image from "next/image";
+
 function CaseStudy() {
+  const duplicateData = [...caseStudyData, ...caseStudyData];
   return (
     <section className="sec_p80">
       <div className="h-screen overflow-x-hidden " id="homeCaseStudy">
-        <div className="container3x px-0 h-full flex flex-col gap-2 caseStudy">
-          <div className="first_sec flex gap-2 flex-1 w-[150%]">
-            {Array(10)
-              ?.fill(0)
-              .map((_, idx) => (
-                <div
-                  className="w-full min-w-96 h-full bg-black-900 p-10"
-                  key={idx}
-                >
-                  <h3>Hello world</h3>
-                </div>
-              ))}
+        <div className="px-0 h-full flex flex-col gap-2 caseStudy">
+          <div className="first_sec flex gap-2 flex-1 w-full">
+            {duplicateData?.map((item, idx) => (
+              <div
+                className="w-full min-w-96 h-full bg-black-900 relative"
+                key={idx}
+              >
+                <Image
+                  src={item?.image}
+                  alt="case study"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
-          <div className="second_sec flex flex-row-reverse gap-2 flex-1 w-[150%]">
-            {Array(10)
-              ?.fill(0)
-              .map((_, idx) => (
-                <div
-                  className="w-full min-w-96 h-full bg-black-900 p-10"
-                  key={idx}
-                >
-                  <h3>Hello world</h3>
-                </div>
-              ))}
+          <div className="second_sec flex flex-row-reverse  gap-2 flex-1 w-full">
+            {duplicateData?.map((item, idx) => (
+              <div
+                className="w-full min-w-96 h-full bg-black-900 relative"
+                key={idx}
+              >
+                <Image
+                  src={item?.image}
+                  alt="case study"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
         {/* Display the percentage */}

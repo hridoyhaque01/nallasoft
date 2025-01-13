@@ -1,3 +1,4 @@
+import { teamData } from "@/services";
 import SectionHeader from "../shared/SectionHeader";
 import SliderContainer from "../shared/SliderContainer";
 import TeamCard from "../teams/TeamCard";
@@ -14,32 +15,16 @@ function Teams() {
       </div>
       <div className="mt-6 sm:mt-8 md:mt-10">
         <SliderContainer
-          options={{ slidesToScroll: "auto", duration: 40, loop: true }}
+          options={{ slidesToScroll: "auto", duration: 100, loop: true }}
           autoPlay={true}
           className="w-full overflow-hidden container2x"
         >
           <div className="flex">
-            <div className="px-1 sm:px-2 md:px-3">
-              <TeamCard />
-            </div>
-            <div className="px-1 sm:px-2 md:px-3">
-              <TeamCard />
-            </div>
-            <div className="px-1 sm:px-2 md:px-3">
-              <TeamCard />
-            </div>
-            <div className="px-1 sm:px-2 md:px-3">
-              <TeamCard />
-            </div>
-            <div className="px-1 sm:px-2 md:px-3">
-              <TeamCard />
-            </div>
-            <div className="px-1 sm:px-2 md:px-3">
-              <TeamCard />
-            </div>
-            <div className="px-1 sm:px-2 md:px-3">
-              <TeamCard />
-            </div>
+            {teamData?.map((team, idx) => (
+              <div className="px-1 sm:px-2 md:px-3" key={idx}>
+                <TeamCard item={team} />
+              </div>
+            ))}
           </div>
         </SliderContainer>
       </div>

@@ -26,16 +26,16 @@ function ServiceCards({
       </div>
       <div
         className={cn(
-          "w-full h-[268px] sm:h-[340px] md:h-[480px] lg:h-[604px] rounded-3xl relative py-12 serviceInnerItem",
+          "w-full h-[268px] sm:h-[340px] md:h-[480px] lg:h-[604px] rounded-3xl relative serviceInnerItem overflow-hidden",
           index % 2 === 0 ? "bg-lime-400 md:order-2" : "bg-blue-700 md:order-1"
         )}
       >
         <Image
           src={service?.image || "/images/placeholder.png"}
           alt="service image"
-          width={400}
-          height={400}
-          className="w-full h-full object-contain"
+          width={600}
+          height={600}
+          className="w-full h-full object-cover"
         />
       </div>
     </div>

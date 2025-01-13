@@ -1,3 +1,4 @@
+import { workData } from "@/services";
 import WorkCard from "./WorkCard";
 
 function WorkContent() {
@@ -11,9 +12,9 @@ function WorkContent() {
         </div>
         <div className="sec_p80" id="works">
           <div className="grid sm:grid-cols-2 gap-6">
-            <WorkCard />
-            <WorkCard />
-            <WorkCard />
+            {workData?.map((item, index) => (
+              <WorkCard key={index} item={item} />
+            ))}
           </div>
         </div>
       </div>

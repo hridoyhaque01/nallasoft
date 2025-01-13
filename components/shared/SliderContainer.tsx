@@ -16,8 +16,8 @@ function SliderContainer({
   [x: string]: unknown;
 }) {
   const [emblaRef] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: autoPlay, delay: 5000 }),
-    AutoScroll({ playOnInit: autoScroll, speed: 0.7 }),
+    Autoplay({ playOnInit: autoPlay, delay: 10000 }),
+    AutoScroll({ playOnInit: autoScroll, speed: 1 }),
   ]);
 
   return <div {...props} ref={emblaRef}></div>;

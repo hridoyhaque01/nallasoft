@@ -6,7 +6,7 @@ const animateHomeCaseStudy = ({}) => {
   const caseStudyTl = gsap.timeline({
     scrollTrigger: {
       trigger: "#homeCaseStudy",
-      scrub: 1,
+      scrub: 2,
       pin: true,
       onUpdate: (self) => {
         const progress = Math.round(self.progress * 100);

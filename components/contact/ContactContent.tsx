@@ -1,6 +1,6 @@
-import { images, Mail, Phone } from "@/services";
-import Image from "next/image";
+import { Mail, Phone } from "@/services";
 import { Button } from "../ui/button";
+import { Globe } from "../ui/globe";
 
 function ContactContent() {
   return (
@@ -35,14 +35,8 @@ function ContactContent() {
               </a>
             </div>
           </div>
-          <div className="w-full p-6 sm:px-8 md:px-10 sm:py-10 md:py-20 bg-neutral-950 rounded40 flex flex-col justify-center items-center order-4 md:order-3">
-            <Image
-              src={images.globe}
-              alt="globe"
-              width={400}
-              height={400}
-              className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] object-contain"
-            />
+          <div className="w-full p-6 sm:px-8 md:px-10 sm:py-10 md:py-20 bg-neutral-950 rounded40 flex flex-col justify-center items-center order-4 md:order-3 relative">
+            <Globe />
           </div>
           <form className="p-6 sm:p-8 md:p-10 bg-neutral-950 rounded40 flex flex-col items-center gap-4 order-3 md:order-4">
             <div className="grid sm:grid-cols-2 gap-2 w-full">

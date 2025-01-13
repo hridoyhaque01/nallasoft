@@ -4,7 +4,7 @@ interface BlogsType {
   _id?: number;
   title?: string;
   description?: string;
-  image?: StaticImageData | string;
+  image: StaticImageData | string;
   tags?: string[];
   user: {
     _id: number;

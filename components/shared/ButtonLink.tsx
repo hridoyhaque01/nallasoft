@@ -12,7 +12,7 @@ function ButtonLink({ path = "", wrapper = "", ...props }) {
         "w-10 sm:w-12 md:w-16 aspect-square bg-black-800 flex items-center justify-center rounded-[64px] !rounded-tr-lg",
         wrapper
       )}
-      onClick={() => navigate.push(path)}
+      onClick={() => (!path ? null : navigate.push(path))}
     >
       <LinkIcon {...props} />
     </button>

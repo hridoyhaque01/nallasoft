@@ -5,6 +5,7 @@ const routes = {
   aboutUs: "/about-us",
   blogs: "/blogs",
   contact: "/contact-us",
+  teams: "/teams",
 };
 
 export { routes };
