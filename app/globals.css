@@ -151,6 +151,11 @@ body {
   -webkit-background-clip: text;
 }
 
+.animateLogo path {
+  fill: #a0e635;
+  animation: logo 2s ease infinite;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -160,6 +165,18 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes logo {
+  0% {
+    fill: #a0e635;
+  }
+  50% {
+    fill: #19e8db;
+  }
+  100% {
+    fill: #a0e635;
   }
 }
 

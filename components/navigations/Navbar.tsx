@@ -3,21 +3,24 @@ import useScroll from "@/hooks/useScroll";
 import { cn } from "@/lib/utils";
 import { Call, Logo, LogoText, Menu, routes } from "@/services";
 import useNavigations from "@/services/animations/useNavigations";
+import { X } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 function Navbar() {
-  useNavigations();
   const { scrolled } = useScroll();
+  const [showMenu, setShowMenu] = useState(false);
+  useNavigations();
   return (
     <header className="container3x py-4 lg:py-6 sticky top-0 z-[99]">
       <nav className="flex items-center justify-between">
-        <div className="logo">
+        <div className="logo relative z-[999]">
           <Link
             href={routes.home}
             className={cn(
               "flex items-center gap-2 duration-500",
               scrolled
-                ? "opacity-0 pointer-events-none scale-95"
+                ? "md:opacity-0 md:pointer-events-none md:scale-95"
                 : "opacity-100 scale-100"
             )}
           >
@@ -25,18 +28,25 @@ function Navbar() {
             <LogoText className="w-24 sm:w-28 lg:w-40 duration-200 md:hidden lg:block" />
           </Link>
         </div>
-        <div className="hidden md:block">
+        <div
+          className={cn(
+            "fixed md:rounded-full top-0 left-0 right-0 bottom-0 bg-black-rgb40 backdrop-blur-md md:bg-transparent md:relative md:block duration-500",
+            showMenu
+              ? "opacity-100 visible pointer-events-auto"
+              : "-translate-x-full md:translate-x-0 opacity-0 invisible pointer-events-none md:opacity-100 md:visible md:pointer-events-auto"
+          )}
+        >
           <div
             className={cn(
               "px-6 lg:px-6 py-4 rounded-full border duration-500",
               scrolled
-                ? "border-text-50 shadow-nav backdrop-blur-md bg-black-rgb40"
+                ? "border-transparent md:border-text-50 md:shadow-nav md:backdrop-blur-md md:bg-black-rgb40"
                 : "border-transparent"
             )}
           >
             <ul
               className={cn(
-                "flex items-center gap-6 lg:gap-8 duration-500 text-white navMenu overflow-hidden"
+                "flex flex-col md:flex-row pt-20 md:pt-0 items-center gap-6 lg:gap-8 duration-500 text-white navMenu overflow-hidden"
               )}
             >
               <li>
@@ -81,6 +91,16 @@ function Navbar() {
               </li>
             </ul>
           </div>
+          <button
+            type="button"
+            className={cn(
+              "w-10 h-10 shrink-0 rounded-full flex items-center justify-center md:hidden border border-neutral-200 absolute bottom-10 left-1/2 -translate-x-1/2",
+              showMenu ? "md:hidden" : "hidden"
+            )}
+            onClick={() => setShowMenu(false)}
+          >
+            <X />
+          </button>
         </div>
         <div
           className={cn(
@@ -107,8 +127,9 @@ function Navbar() {
               ? "opacity-0 pointer-events-none scale-95"
               : "opacity-100 scale-100"
           )}
+          onClick={() => setShowMenu(!showMenu)}
         >
-          <Menu />
+          {showMenu ? <X className="w-6 h-6 text-lime-400" /> : <Menu />}
         </button>
       </nav>
     </header>

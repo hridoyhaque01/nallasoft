@@ -23,7 +23,7 @@ function Banner() {
               <h2 className="bannerHeader">Trusted</h2>
               <h2 className="flex gap-1 sm:gap-2 items-center justify-center sm:justify-start bannerHeader">
                 Part{" "}
-                <Logo className="w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 xl:w-14 xl:h-14 -mb-1 md:-mb-2 " />{" "}
+                <Logo className="w-5 h-5 sm:w-7 sm:h-7 md:w-10 md:h-10 xl:w-14 xl:h-14 -mb-1 md:-mb-2 animateLogo" />{" "}
                 er
               </h2>
             </div>
