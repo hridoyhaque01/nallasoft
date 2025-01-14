@@ -1,6 +1,7 @@
 import Footer from "@/components/navigations/Footer";
 import Navbar from "@/components/navigations/Navbar";
 import Cursor from "@/components/shared/Cursor";
+import ProgressToast from "@/components/shared/ProgressToast";
 import SmoothScrolling from "@/components/shared/SmoothScroll";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -116,6 +117,7 @@ export default function RootLayout({
           </div>
         </SmoothScrolling>
         <Cursor />
+        <ProgressToast />
       </body>
     </html>
   );
