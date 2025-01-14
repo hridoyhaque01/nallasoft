@@ -24,7 +24,7 @@ function ServiceCards({
         <p className="text-xs sm:text-base md:text-xl line-clamp-6">
           {service?.description}
         </p>
-        <ShineBorder className="before:rounded-3xl" />
+        <ShineBorder className="!before:rounded-3xl" />
       </div>
       <div
         className={cn(
