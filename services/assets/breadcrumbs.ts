@@ -41,6 +41,16 @@ const breadcrumbs = {
       href: routes.blogs,
     },
   ],
+  about: [
+    {
+      name: "Home",
+      href: routes.home,
+    },
+    {
+      name: "About Us",
+      href: routes.aboutUs,
+    },
+  ],
 };
 
 export { breadcrumbs };

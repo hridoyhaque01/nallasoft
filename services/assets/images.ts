@@ -28,6 +28,7 @@ import demo5 from "@/public/demo-5.webp";
 import demo6 from "@/public/demo-6.webp";
 import demo7 from "@/public/demo-7.webp";
 import demo8 from "@/public/demo-8.webp";
+import demo9 from "@/public/demo-9.webp";
 import member1 from "@/public/member-1.webp";
 
 export {
@@ -43,6 +44,7 @@ export {
   demo6,
   demo7,
   demo8,
+  demo9,
   facebook,
   figma,
   flutter,

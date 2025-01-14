@@ -1,6 +1,7 @@
 import { routes } from "@/services";
 import ButtonLink from "../shared/ButtonLink";
 import SectionHeader from "../shared/SectionHeader";
+import { BorderBeam } from "../ui/border-beam";
 
 function Services() {
   return (
@@ -13,7 +14,7 @@ function Services() {
         />
         <div className="grid sm:grid-cols-2 gap-4 mt-6">
           <div
-            className="px-4 py-6 sm:px-6 sm:py-8 md:p-10 rounded-3xl bg-black-900 flex flex-col justify-between gap-8 sm:gap-12 md:gap-16"
+            className="px-4 py-6 sm:px-6 sm:py-8 md:p-10 rounded-3xl bg-black-900 flex flex-col justify-between gap-8 sm:gap-12 md:gap-16 relative"
             id="service1"
           >
             <h3 className="text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-max uppercase serviceTitle">
@@ -33,10 +34,11 @@ function Services() {
               </div>
               <ButtonLink path={routes.home} />
             </div>
+            <BorderBeam />
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 overflow-hidden">
             <div
-              className="px-4 py-6 sm:px-6 sm:py-8 md:p-10 rounded-3xl bg-black-900 flex flex-col justify-between gap-8 sm:gap-12 md:gap-16"
+              className="px-4 py-6 sm:px-6 sm:py-8 md:p-10 rounded-3xl bg-black-900 flex flex-col justify-between gap-8 sm:gap-12 md:gap-16 relative"
               id="service2"
             >
               <h3 className="text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-max uppercase serviceTitle">
@@ -53,9 +55,10 @@ function Services() {
                 </div>
                 <ButtonLink path={routes.home} />
               </div>
+              <BorderBeam delay={1} />
             </div>
             <div
-              className="px-4 py-6 sm:px-6 sm:py-8 md:p-10 rounded-3xl bg-black-900 flex flex-col justify-between gap-8 sm:gap-12 md:gap-16"
+              className="px-4 py-6 sm:px-6 sm:py-8 md:p-10 rounded-3xl bg-black-900 flex flex-col justify-between gap-8 sm:gap-12 md:gap-16 relative"
               id="service3"
             >
               <h3 className="text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-max uppercase serviceTitle">
@@ -75,6 +78,7 @@ function Services() {
                 </div>
                 <ButtonLink path={routes.home} />
               </div>
+              <BorderBeam delay={2} />
             </div>
           </div>
         </div>

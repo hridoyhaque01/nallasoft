@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ServiceType } from "@/services/types/service";
 import Image from "next/image";
+import ShineBorder from "../ui/shine-border";
 
 function ServiceCards({
   service,
@@ -10,10 +11,10 @@ function ServiceCards({
   index: number;
 }) {
   return (
-    <div className="flex flex-col md:flex-row gap-2 sm:gap-3 md:gap-4 serviceItem">
+    <div className="flex flex-col md:flex-row gap-2 sm:gap-3 md:gap-4 serviceItem overflow-hidden">
       <div
         className={cn(
-          "w-full p-6 sm:p-10 md:p-16 xl:p-20 bg-neutral-900 rounded-3xl flex flex-col gap-4 sm:gap-7 md:gap-10 serviceInnerItem",
+          "w-full p-6 sm:p-10 md:p-16 xl:p-20 bg-neutral-900 rounded-3xl flex flex-col gap-4 sm:gap-7 md:gap-10 serviceInnerItem relative",
           index % 2 === 0 ? "order-2 md:order-1" : "order-1 md:order-2"
         )}
       >
@@ -23,6 +24,7 @@ function ServiceCards({
         <p className="text-xs sm:text-base md:text-xl line-clamp-6">
           {service?.description}
         </p>
+        <ShineBorder className="before:rounded-3xl" />
       </div>
       <div
         className={cn(

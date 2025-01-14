@@ -363,6 +363,27 @@ const teamData = [
   },
 ];
 
+const recentCreationData = [
+  {
+    _id: 1,
+    title: "Product Name",
+    category: "App Design",
+    image: images?.demo9,
+  },
+  {
+    _id: 2,
+    title: "Product Name",
+    category: "App Design",
+    image: images?.demo9,
+  },
+  {
+    _id: 3,
+    title: "Product Name",
+    category: "App Design",
+    image: images?.demo9,
+  },
+];
+
 const workData = [
   {
     _id: 1,
@@ -400,6 +421,7 @@ export {
   caseStudyData,
   experties,
   faqLists,
+  recentCreationData,
   serviceData,
   serviceTabs,
   teamData,

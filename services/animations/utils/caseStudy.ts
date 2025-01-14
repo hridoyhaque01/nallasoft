@@ -8,6 +8,8 @@ const animateHomeCaseStudy = ({}) => {
       trigger: "#homeCaseStudy",
       scrub: 2,
       pin: true,
+      start: "left top",
+      end: "right top",
       onUpdate: (self) => {
         const progress = Math.round(self.progress * 100);
         percentage = progress;

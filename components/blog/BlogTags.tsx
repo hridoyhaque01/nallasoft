@@ -17,7 +17,7 @@ function BlogTags({ tags }: { tags: string[] }) {
   };
   return (
     <div className="w-full max-w-[288px] xl:max-w-[420px] ">
-      <div className="w-full rounded40 p-6 sm:p-8 md:p-10 bg-neutral-900 hidden lg:block sticky top-[110px]">
+      <div className="w-full rounded40 p-6 sm:p-8 md:p-10 bg-neutral-900 hidden lg:block sticky top-10">
         <ul className="flex flex-col gap-6" id="blogTags">
           {blogTagData?.map((item) => (
             <li

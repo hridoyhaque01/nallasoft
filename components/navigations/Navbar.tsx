@@ -20,8 +20,9 @@ function Navbar() {
             className={cn(
               "flex items-center gap-2 duration-500",
               scrolled
-                ? "md:opacity-0 md:pointer-events-none md:scale-95"
-                : "opacity-100 scale-100"
+                ? "opacity-0 pointer-events-none scale-95"
+                : "opacity-100 scale-100 pointer-events-auto",
+              showMenu ? "opacity-100 scale-100 pointer-events-auto" : ""
             )}
           >
             <Logo className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 duration-200" />
@@ -53,6 +54,8 @@ function Navbar() {
                 <Link
                   className="hover:text-lime-400 duration-300"
                   href={routes.services}
+                  onClick={() => setShowMenu(false)}
+                  prefetch={true}
                 >
                   Services
                 </Link>
@@ -61,6 +64,8 @@ function Navbar() {
                 <Link
                   className="hover:text-lime-400 duration-300"
                   href={routes.works}
+                  onClick={() => setShowMenu(false)}
+                  prefetch={true}
                 >
                   Works
                 </Link>
@@ -69,6 +74,7 @@ function Navbar() {
                 <Link
                   className="hover:text-lime-400 duration-300"
                   href={routes.aboutUs}
+                  onClick={() => setShowMenu(false)}
                 >
                   About Us
                 </Link>
@@ -77,6 +83,8 @@ function Navbar() {
                 <Link
                   className="hover:text-lime-400 duration-300"
                   href={routes.blogs}
+                  onClick={() => setShowMenu(false)}
+                  prefetch={true}
                 >
                   Blogs
                 </Link>
@@ -85,6 +93,9 @@ function Navbar() {
                 <Link
                   className="hover:text-lime-400 duration-300"
                   href={routes.contact}
+                  onClick={() => setShowMenu(false)}
+                  prefetch={true}
+
                 >
                   Contact Us
                 </Link>
@@ -122,10 +133,11 @@ function Navbar() {
         <button
           type="button"
           className={cn(
-            "w-10 h-10 shrink-0 rounded-full bg-black-800 flex items-center justify-center md:hidden navBtn",
+            "w-10 h-10 shrink-0 rounded-full bg-black-800 flex items-center justify-center md:hidden navBtn relative z-50 duration-500",
             scrolled
-              ? "opacity-0 pointer-events-none scale-95"
-              : "opacity-100 scale-100"
+              ? "!opacity-0 pointer-events-none scale-95"
+              : "opacity-100 scale-100",
+            showMenu ? "opacity-100 scale-100 pointer-events-auto" : ""
           )}
           onClick={() => setShowMenu(!showMenu)}
         >
