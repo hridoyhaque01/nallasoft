@@ -38,9 +38,7 @@ function RecentCreation() {
                   className="w-full h-full"
                 />
               </div>
-              <ShineBorder
-                className="before:rounded-3xl sm:before:rounded-[32px] md:before:rounded-[40px]"
-              />
+              <ShineBorder className="before:!rounded-3xl sm:before:!rounded-[32px] md:before:!rounded-[40px]" />
             </div>
           ))}
         </div>

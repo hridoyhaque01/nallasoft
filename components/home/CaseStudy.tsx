@@ -5,7 +5,7 @@ function CaseStudy() {
   const duplicateData = [...caseStudyData, ...caseStudyData];
   return (
     <section className="sec_p80">
-      <div className="h-screen overflow-x-hidden " id="homeCaseStudy">
+      <div className="h-screen overflow-x-hidden relative" id="homeCaseStudy">
         <div className="px-0 h-full flex flex-col gap-2 caseStudy">
           <div className="first_sec flex gap-2 flex-1 w-full">
             {duplicateData?.map((item, idx) => (

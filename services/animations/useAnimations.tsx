@@ -2,7 +2,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { usePathname } from "next/navigation";
-import { useRef } from "react";
 import { getActivePath } from "../utils";
 import { animateBanner, animateSection } from "./utils";
 import { animateHomeAbout } from "./utils/about";
@@ -19,14 +18,14 @@ type PageKeys = "home" | "services" | "works" | "about" | "blogs" | "contact";
 
 const useAnimations = () => {
   const pathname = usePathname();
-  const animationHistory = useRef<Record<PageKeys, boolean>>({
-    home: false,
-    services: false,
-    works: false,
-    about: false,
-    blogs: false,
-    contact: false,
-  });
+  // const animationHistory = useRef<Record<PageKeys, boolean>>({
+  //   home: false,
+  //   services: false,
+  //   works: false,
+  //   about: false,
+  //   blogs: false,
+  //   contact: false,
+  // });
 
   const animateHome = () => {
     animateBanner({});
@@ -90,21 +89,21 @@ const useAnimations = () => {
     const activePath = getActivePath(pathname) as PageKeys;
     gsap.registerPlugin(ScrollTrigger);
 
-    if (!animationHistory.current[activePath]) {
-      animationHistory.current[activePath] = true; // Mark the page as animated
+    // if (!animationHistory.current[activePath]) {
+    // animationHistory.current[activePath] = true; // Mark the page as animated
 
-      if (activePath === "home") {
-        animateHome();
-      } else if (activePath === "services") {
-        animateServices();
-      } else if (activePath === "works") {
-        animateWorks();
-      } else if (activePath === "blogs") {
-        animateBlogs();
-      } else if (activePath === "contact") {
-        animateContact();
-      }
+    if (activePath === "home") {
+      animateHome();
+    } else if (activePath === "services") {
+      animateServices();
+    } else if (activePath === "works") {
+      animateWorks();
+    } else if (activePath === "blogs") {
+      animateBlogs();
+    } else if (activePath === "contact") {
+      animateContact();
     }
+    // }
 
     animateFooter({});
 
