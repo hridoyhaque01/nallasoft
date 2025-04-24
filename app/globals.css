@@ -156,6 +156,11 @@ body {
   animation: logo 2s ease infinite;
 }
 
+.animateLogo {
+  transform: rotate(0) scale(1);
+  animation: logoTransform 6s ease-in-out infinite;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -165,6 +170,23 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+/* ANIMATE SVG WITH ROTATE AND SCALE */
+
+@keyframes logoTransform {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  25% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(0) scale(1);
+  }
+  100% {
+    transform: rotate(0) scale(1);
   }
 }
 
